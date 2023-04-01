@@ -1,0 +1,13 @@
+server:
+    port: 8020
+spring:
+    datasource:
+        password: wposs123
+        url: jdbc:postgresql://localhost:5432/project_scrum
+        username: postgres
+    jpa:
+        database: postgresql
+        generate-ddl: true
+        hibernate:
+            ddl-auto: update
+        open-in-view: false
