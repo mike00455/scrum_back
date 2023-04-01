@@ -5,8 +5,8 @@ import com.wposs.scrum_back.area.entity.Area;
 import com.wposs.scrum_back.employee.dto.EmployeeDto;
 import com.wposs.scrum_back.employee.entity.Employee;
 import com.wposs.scrum_back.employee.service.EmployeeService;
-import com.wposs.scrum_back.task.dto.TaskDto;
-import com.wposs.scrum_back.task.entity.Task;
+import com.wposs.scrum_back.taskteam.dto.TaskTeamDto;
+import com.wposs.scrum_back.taskteam.entity.TaskTeam;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;
 import io.swagger.annotations.ApiResponses;
@@ -74,14 +74,14 @@ public class EmployeeController {
         return new ResponseEntity<>(map, HttpStatus.BAD_REQUEST);
     }
 
-    @PutMapping("/savetaskonemployee/{employeeId}")
-    public ResponseEntity<EmployeeDto> updateTaskEmployee(@Valid @RequestBody List<TaskDto> taskDtos, @PathVariable("employeeId") UUID employeeId){
-        Employee employee = this.employeeService.findByEmployeeId(employeeId);
-        List<Task> tasks = taskDtos.stream()
-                .map(taskDto -> modelMapper.map(taskDto, Task.class)).collect(Collectors.toList());
-        employee.setTasks(tasks);
-        Employee employeeUpdate = this.employeeService.save(employee);
-        return  new ResponseEntity<>(modelMapper.map(employeeUpdate, EmployeeDto.class), HttpStatus.OK);
-    }
+//    @PutMapping("/savetaskonemployee/{employeeId}")
+//    public ResponseEntity<EmployeeDto> updateTaskEmployee(@Valid @RequestBody List<TaskDto> taskDtos, @PathVariable("employeeId") UUID employeeId){
+//        Employee employee = this.employeeService.findByEmployeeId(employeeId);
+//        List<TaskTeam> tasks = taskDtos.stream()
+//                .map(taskDto -> modelMapper.map(taskDto, Task.class)).collect(Collectors.toList());
+//        employee.setTasks(tasks);
+//        Employee employeeUpdate = this.employeeService.save(employee);
+//        return  new ResponseEntity<>(modelMapper.map(employeeUpdate, EmployeeDto.class), HttpStatus.OK);
+//    }
 
 }

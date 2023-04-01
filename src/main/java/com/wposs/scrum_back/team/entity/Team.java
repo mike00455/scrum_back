@@ -37,9 +37,6 @@ public class Team {
             uniqueConstraints = @UniqueConstraint(columnNames = {"team_id", "employee_id"}, name = "uc_employee_team"))
     private List<Employee> employees;
 
-    @OneToMany(mappedBy = "team")
-    private List<TaskTeam> taskTeams;
-
 
     public UUID getTeamId() {
         return teamId;
@@ -81,11 +78,4 @@ public class Team {
         this.employees = employees;
     }
 
-    public List<TaskTeam> getTaskTeams() {
-        return taskTeams;
-    }
-
-    public void setTaskTeams(List<TaskTeam> taskTeams) {
-        this.taskTeams = taskTeams;
-    }
 }

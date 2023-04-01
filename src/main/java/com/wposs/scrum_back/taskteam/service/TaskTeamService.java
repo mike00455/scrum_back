@@ -22,9 +22,9 @@ private final TaskTeamRepository taskTeamRepository;
     public Optional<TaskTeam> getTaskTeam(UUID taskTeamId){
         return taskTeamRepository.findById(taskTeamId);
     }
-    public List<TaskTeam> getByTeam(UUID teamId){
-        return taskTeamRepository.findByTeamId(teamId);
-    }
+//    public List<TaskTeam> getByTeam(UUID teamId){
+//        return taskTeamRepository.findByTeamId(teamId);
+//    }
 
     public TaskTeam update(UUID taskTeamId, TaskTeam taskTeam){
        return taskTeamRepository.findById(taskTeamId).map(taskTeam1 -> {

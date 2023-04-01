@@ -2,7 +2,7 @@ package com.wposs.scrum_back.employee.dto;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.wposs.scrum_back.task.entity.Task;
+import com.wposs.scrum_back.taskteam.entity.TaskTeam;
 
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
@@ -40,7 +40,6 @@ public class EmployeeDto {
     @Size(max = 200)
     private String employeeKnowledge;
 
-    private List<Task> tasks;
 
     public UUID getEmployeeId() {
         return employeeId;
@@ -82,11 +81,4 @@ public class EmployeeDto {
         this.employeeKnowledge = employeeKnowledge;
     }
 
-    public List<Task> getTasks() {
-        return tasks;
-    }
-
-    public void setTasks(List<Task> tasks) {
-        this.tasks = tasks;
-    }
 }

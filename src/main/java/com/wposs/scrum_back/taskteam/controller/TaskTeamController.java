@@ -50,14 +50,14 @@ public class TaskTeamController {
                 .orElse(new ResponseEntity<>(HttpStatus.NOT_FOUND));
     }
 
-    @GetMapping("/team/{teamId}")
-    @ApiOperation("Get all task by team id")
-    @ApiResponses({@ApiResponse(code = 200, message = "success")})
-    public ResponseEntity<List<TaskTeamDto>> findByTeamId(@PathVariable UUID teamId){
-        List<TaskTeam> taskTeams = taskTeamService.getByTeam(teamId);
-        return new ResponseEntity<>(taskTeams.stream().map(taskTeam -> modelMapper.map(taskTeam,TaskTeamDto.class))
-                .collect(Collectors.toList()), HttpStatus.OK);
-    }
+//    @GetMapping("/team/{teamId}")
+//    @ApiOperation("Get all task by team id")
+//    @ApiResponses({@ApiResponse(code = 200, message = "success")})
+//    public ResponseEntity<List<TaskTeamDto>> findByTeamId(@PathVariable UUID teamId){
+//        List<TaskTeam> taskTeams = taskTeamService.getByTeam(teamId);
+//        return new ResponseEntity<>(taskTeams.stream().map(taskTeam -> modelMapper.map(taskTeam,TaskTeamDto.class))
+//                .collect(Collectors.toList()), HttpStatus.OK);
+//    }
 
     @PostMapping("/save")
     @ApiOperation("Create task")

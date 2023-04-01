@@ -11,5 +11,5 @@ import java.util.UUID;
 @Repository
 public interface TaskTeamRepository extends JpaRepository<TaskTeam, UUID>, CrudRepository<TaskTeam, UUID> {
 
-    List<TaskTeam> findByTeamId(UUID teamId);
+//    List<TaskTeam> findByTeamId(UUID teamId);
 }

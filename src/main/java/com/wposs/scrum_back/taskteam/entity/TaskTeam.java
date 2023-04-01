@@ -19,12 +19,6 @@ public class TaskTeam {
     @Column(name = "task_team_name")
     private String taskTeamName;
 
-    @Column(name = "team_id")
-    private UUID teamId;
-
-    @ManyToOne
-    @JoinColumn(name = "team_id", insertable = false, nullable = false)
-    private Team team;
 
     public UUID getTaskTeamId() {
         return taskTeamId;
@@ -42,19 +36,4 @@ public class TaskTeam {
         this.taskTeamName = taskTeamName;
     }
 
-    public UUID getTeamId() {
-        return teamId;
-    }
-
-    public void setTeamId(UUID teamId) {
-        this.teamId = teamId;
-    }
-
-    public Team getTeam() {
-        return team;
-    }
-
-    public void setTeam(Team team) {
-        this.team = team;
-    }
 }

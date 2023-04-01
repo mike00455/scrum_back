@@ -15,7 +15,7 @@ public class Board {
     @Column(name = "board_id")
     private UUID board_id;
 
-    @Column(name = "")
+//    @Column(name = "")
 
 
 }
